@@ -34,12 +34,18 @@ void Tick(){
 			}
 			break;
 		case p0push:
-		//	if(button ==0x01){
-		//		state = p0push;
-		//	}
-		//	else{
+			if(button ==0x01){
+				while(button==0x01){
+						count--;
+						if(count ==0){
+						state = p0push;
+						}
+						}
+						count=10;
+			}
+			else{
 			state = wait1;
-		//	}
+			}
 			break;
 		case wait1:
 			if(button == 0x02){
@@ -51,38 +57,26 @@ void Tick(){
 			else if(button==0x00){
 				state = init;
 			}
-			else if(button ==0x01 && count != 0){
-				state = wait1;
-			}
-			else if(button == 0x01 && count ==0){
-				state = p0push;
-			}
 			else{
 				state = wait1;
 			}
 			break;
 		case p1push:
-		//	if(button == 0x02){
-		//		state = p1push;
-		//	}
-		//	else{
+			if(button == 0x02){
+				state = p1push;
+			}
+			else{
 			state = wait2;
-		//	}
+			}
 			break;
 		case wait2:
 			if(button==0x03){
 				state = reset;
 			}
-			else if(button == 0x00){
-				state = init;
-			}
 			else if(button==0x01){
 				state = p0push;
 			}
-			else if(button == 0x02 && count!=0){
-				state = wait2;
-			}
-			else if(button == 0x02 && count == 0){
+			else if(button == 0x02){
 				state = p1push;
 			}
 			else{
@@ -109,22 +103,19 @@ void Tick(){
 			//portcCount = 7;
 			break;
 		case p0push:
-			count = 10;
 			if(portcCount < 9){
 				portcCount = portcCount +1;
 			}
 			break;
 		case p1push: 
-			count = 10;
 			if(portcCount > 0){
 				portcCount = portcCount -1;
 			}
 			break;
 		case wait1:
-			count--;
+			count = 10;
 			break;
 		case wait2:
-			count--;
 			break;
 		case reset:
 			portcCount =0;
