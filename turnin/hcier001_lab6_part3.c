@@ -1,11 +1,13 @@
-/*	Author: lab
+/*	Author: Hannah Cierlak
  *  Partner(s) Name: none
  *	Lab Section:
- *	Assignment: Lab #  Exercise #
+ *	Assignment: Lab 6  Exercise 3
  *	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
+ *
+ *	submission link: https://drive.google.com/file/d/1b-Fb0-K94C2W40AoBbjUQGPkRUPqU_AW/view?usp=sharing
  */
 
 #include <avr/io.h>
